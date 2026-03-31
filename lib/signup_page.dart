@@ -6,19 +6,18 @@ class SignupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: darkMaroon, // The background behind the rounded white box
+      backgroundColor: darkMaroon,
 
       appBar: AppBar(
-        backgroundColor: Colors.transparent, // Makes it blend into the dark maroon scaffold
+        backgroundColor: Colors.transparent,
         elevation: 0,
         title: Text("Create Account", style: TextStyle(color: Colors.white, fontSize: 16)),
         centerTitle: true,
-        iconTheme: IconThemeData(color: Colors.white), // Makes the back arrow white
+        iconTheme: IconThemeData(color: Colors.white),
       ),
 
-      // The white box with rounded corners
       body: Container(
-        width: double.infinity, // Takes up full width
+        width: double.infinity,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
@@ -26,7 +25,7 @@ class SignupPage extends StatelessWidget {
             topRight: Radius.circular(30),
           ),
         ),
-        // SingleChildScrollView lets the screen scroll up when the keyboard opens!
+
         child: SingleChildScrollView(
           padding: EdgeInsets.all(30),
           child: Column(
@@ -38,7 +37,6 @@ class SignupPage extends StatelessWidget {
               ),
               SizedBox(height: 30),
 
-              // --- TEXT FIELDS ---
               buildSimpleTextField("Username"),
               SizedBox(height: 20),
               buildSimpleTextField("Password"),
@@ -48,17 +46,15 @@ class SignupPage extends StatelessWidget {
               buildSimpleTextField("Phone Number"),
               SizedBox(height: 40),
 
-              // --- BUTTONS ---
               buildCustomButton("Sign up", darkMaroon, null),
               SizedBox(height: 15),
               buildCustomButton("Continue with Facebook", Colors.black, Icons.facebook),
               SizedBox(height: 15),
-              // We use a custom 'G' text here because Flutter doesn't have a default Google icon built-in
+
               buildCustomButton("Continue with Google", Colors.black, null, customIconLetter: "G"),
 
               SizedBox(height: 30),
 
-              // Bottom Text
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -73,24 +69,20 @@ class SignupPage extends StatelessWidget {
     );
   }
 
-  // ==========================================
-  // HELPER FUNCTIONS
-  // ==========================================
 
-  // Function to draw a simple text field with a bottom line
   Widget buildSimpleTextField(String hintText) {
     return TextField(
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: TextStyle(color: Colors.grey),
-        // This makes just a simple line at the bottom
+
         enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey.shade400)),
         focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.black)),
       ),
     );
   }
 
-  // Function to draw the big solid buttons (with or without icons)
+
   Widget buildCustomButton(String text, Color bgColor, IconData? icon, {String? customIconLetter}) {
     return SizedBox(
       width: double.infinity,
@@ -100,7 +92,7 @@ class SignupPage extends StatelessWidget {
           backgroundColor: bgColor,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         ),
-        onPressed: () {}, // Empty so it doesn't do anything when clicked yet
+        onPressed: () {},
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

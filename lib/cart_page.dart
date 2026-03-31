@@ -104,10 +104,10 @@ class CartPage extends StatelessWidget {
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.white70,
-        currentIndex: 2, // 2 is Cart
+        currentIndex: 2,
         onTap: (index) {
           if (index == 0) {
-            Navigator.pop(context); // Pops the cart page off and returns to Home
+            Navigator.pop(context);
           }
         },
         items: [
@@ -121,7 +121,6 @@ class CartPage extends StatelessWidget {
     );
   }
 
-  // --- CART PAGE HELPER FUNCTIONS ---
   Widget buildCartItem(String title, String price) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 15.0),

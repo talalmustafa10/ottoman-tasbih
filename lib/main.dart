@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart'; // This tells main.dart where to find your Home Page
+import 'home_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Ottoman Tasbih',
-      home: HomePage(), // Starts the app on the HomePage
+      home: HomePage(),
     );
   }
 }

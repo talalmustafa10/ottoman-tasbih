@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'cart_page.dart';
-import 'signup_page.dart'; // This is the new link to your signup page!
+import 'signup_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -11,7 +11,6 @@ class _HomePageState extends State<HomePage> {
   final Color darkMaroon = const Color(0xFF330B0B);
   final Color goldColor = const Color(0xFFC79B3B);
 
-  // This variable remembers if the search box is open or closed
   bool isSearching = false;
 
   @override
@@ -22,7 +21,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: darkMaroon,
         elevation: 0,
-        // The title swaps between the text "Home" and the typing box
+
         title: isSearching
             ? TextField(
           style: TextStyle(color: Colors.white),
@@ -35,7 +34,7 @@ class _HomePageState extends State<HomePage> {
             : Text("Home", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
 
         actions: [
-          // The Search Icon
+
           IconButton(
             icon: Icon(isSearching ? Icons.close : Icons.search, color: Colors.white),
             onPressed: () {
@@ -46,7 +45,7 @@ class _HomePageState extends State<HomePage> {
           ),
           SizedBox(width: 5),
 
-          // --- THE ACCOUNT ICON (NOW LINKED!) ---
+
           IconButton(
             icon: Icon(Icons.person, color: Colors.white),
             onPressed: () {
@@ -166,7 +165,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // --- HOME PAGE HELPER FUNCTIONS ---
   Widget buildSimpleProduct(BuildContext context, String name, String price) {
     return Container(
       width: 160,
