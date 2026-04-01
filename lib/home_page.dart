@@ -156,7 +156,7 @@ class _HomePageState extends State<HomePage> {
         },
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Tasbih"),
+          BottomNavigationBarItem(icon: Icon(Icons.category), label: "Tasbih"),
           BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "Cart"),
           BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Favorite"),
           BottomNavigationBarItem(icon: Icon(Icons.support_agent), label: "Service"),
@@ -174,7 +174,13 @@ class _HomePageState extends State<HomePage> {
         children: [
           Container(height: 120, color: Colors.black87),
           SizedBox(height: 10),
-          Text(name, style: TextStyle(fontSize: 12), textAlign: TextAlign.center),
+          Text(
+              name,
+              style: TextStyle(fontSize: 12),
+              textAlign: TextAlign.center,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          ),
           SizedBox(height: 5),
           Text(price, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
           SizedBox(height: 5),
